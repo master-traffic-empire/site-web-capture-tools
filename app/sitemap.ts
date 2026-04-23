@@ -15,7 +15,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const staticRoutes: MetadataRoute.Sitemap = [
     {
-      url: siteConfig.baseUrl,
+      url: `${siteConfig.baseUrl}/`,
       lastModified: now,
       changeFrequency: "weekly",
       priority: 1,
