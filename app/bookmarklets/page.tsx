@@ -2,6 +2,7 @@ import type { Metadata } from "next"
 import { siteConfig } from "@/site.config"
 import { Header } from "../components/Header"
 import { Footer } from "../components/Footer"
+import { BookmarkletLink } from "../components/BookmarkletLink"
 
 export const metadata: Metadata = {
   title: "Browser Bookmarklets — One-Click Screenshot, PDF, and Page Tools",
@@ -94,10 +95,7 @@ export default function BookmarkletsPage() {
               <li key={bm.name} className="bookmarklet-item">
                 <h3>{bm.name}</h3>
                 <p>{bm.description}</p>
-                {/* eslint-disable-next-line @next/next/no-html-link-for-pages */}
-                <a className="bookmarklet" href={bm.href} draggable={true} onClick={(e) => e.preventDefault()}>
-                  {bm.name}
-                </a>
+                <BookmarkletLink name={bm.name} href={bm.href} />
               </li>
             ))}
           </ul>
